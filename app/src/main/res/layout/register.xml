@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="RegisterActivity">
+
+    <!-- 뒤로 가기 버튼 -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/registerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Username 입력 필드 -->
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="이름을 입력해주세요"
+        android:inputType="textPersonName"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/registerTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Nickname 입력 필드 -->
+    <EditText
+        android:id="@+id/nicknameInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="닉네임을 입력해주세요"
+        android:inputType="textPersonName"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/usernameInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Email 입력 필드 -->
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="이메일을 입력해주세요 (abc@gmail.com)"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/nicknameInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Password 입력 필드 -->
+    <EditText
+        android:id="@+id/phonenumberInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="전화번호를 입력해주세요 (- 없이 입력)"
+        android:inputType="textPassword"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Confirm Password 입력 필드 -->
+    <EditText
+        android:id="@+id/confirmPasswordInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호를 입력해주세요 (6자 이상)"
+        android:inputType="textPassword"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/phonenumberInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- Register 버튼 -->
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="가입하기"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/confirmPasswordInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"/>
+
+    <!-- 소셜 로그인 옵션들 -->
+    <LinearLayout
+        android:id="@+id/socialLoginOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/registerButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/facebookLogin"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:contentDescription="Login with Facebook"
+            android:src="@drawable/ic_facebook"
+            android:background="@null"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/googleLogin"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_google"
+            android:contentDescription="Login with Google"
+            android:background="@null"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/appleLogin"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_apple"
+            android:contentDescription="Login with Apple"
+            android:background="@null"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미 계정이 있나요? 지금 바로 로그인 하세요."
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/socialLoginOptions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

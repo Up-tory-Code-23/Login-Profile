@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindAccountActivity">
+
+    <!-- 뒤로 가기 버튼 -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 계정 찾기 제목 -->
+    <TextView
+        android:id="@+id/accountRecoveryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정 찾기"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 이메일 또는 전화번호 입력 필드 -->
+    <EditText
+        android:id="@+id/emailOrPhoneInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="이메일 또는 전화번호를 입력해주세요"
+        android:inputType="textEmailAddress|phone"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/accountRecoveryTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- 인증번호 보내기 버튼 -->
+    <Button
+        android:id="@+id/sendVerificationCodeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="인증번호 보내기"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/emailOrPhoneInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF" />
+
+    <!-- 인증 코드 입력 필드 -->
+    <EditText
+        android:id="@+id/verificationCodeInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="인증 코드를 입력해주세요"
+        android:inputType="text"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/sendVerificationCodeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <!-- 비밀번호 재설정 버튼 -->
+    <Button
+        android:id="@+id/resetPasswordButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 재설정"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/verificationCodeInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF" />
+
+    <!-- '또는' 텍스트 추가 -->
+    <TextView
+        android:id="@+id/orText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="또는"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/resetPasswordButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- "계정을 찾으실 수 없나요?" 텍스트 -->
+    <TextView
+        android:id="@+id/cannotFindAccountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="계정을 찾을 수 없나요?"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orText" />
+
+    <!-- 새 계정 등록으로 이동 링크 -->
+    <Button
+        android:id="@+id/goToRegisterLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="144dp"
+        android:background="?attr/selectableItemBackground"
+        android:text="새 계정 등록"
+        android:textColor="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cannotFindAccountText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
