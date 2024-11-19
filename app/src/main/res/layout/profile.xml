@@ -123,6 +123,40 @@
                 android:src="@drawable/ic_arrow_right" />
         </LinearLayout>
 
+        <!-- 장바구니 -->
+        <LinearLayout
+            android:id="@+id/basket"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/basket_ic"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/basket_icon"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/basketText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="장바구니"
+                android:textSize="16sp"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
         <!-- 찜 목록 -->
         <View
             android:layout_width="match_parent"
